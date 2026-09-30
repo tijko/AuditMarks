@@ -1,0 +1,14 @@
+name: AuditMarks 
+
+run-name: ${{ github.actor }} pushed
+
+on: [push]
+
+jobs:
+  run-AuditMarks-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: AuditMarks Test
+        run: |
+          echo 'Testing'  
