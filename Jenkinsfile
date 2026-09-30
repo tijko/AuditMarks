@@ -1,5 +1,6 @@
 pipeline {
     agent { label 'Jenkins-Agent'}
+    tools { nodejs "node" }
     stages {
         stage('Checkout') {
             steps {
@@ -17,6 +18,13 @@ pipeline {
             steps {
                 sh 'echo GIT sourcing'
                 git branch:'main', url:'https://github.com/tijko/AuditMarks.git'
+            }
+        }
+
+        stage('Install Node Dependencies') {
+            steps {
+                sh 'echo Installing Node Dependencies'
+                sh 'npm ci'
             }
         }
     }
