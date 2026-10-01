@@ -10,5 +10,5 @@ app.post('/bookmarks', (req: Request, res: Response) => {
 });
 
 app.listen(PORT, () => {
-    console.log('Server up and Listening!\n');
+    console.log('Server up and Listening!');
 });
